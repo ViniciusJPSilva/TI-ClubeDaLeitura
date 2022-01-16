@@ -1,0 +1,56 @@
+CREATE SEQUENCE "seq-revista";
+CREATE SEQUENCE "seq-caixa";
+CREATE SEQUENCE "seq-amigo";
+CREATE SEQUENCE "seq-emprestimo";
+CREATE SEQUENCE "seq-usuario";
+
+
+CREATE TABLE usuario (
+	idusuario BIGINT NOT NULL DEFAULT NEXTVAL('seq-usuario'),
+	usuario VARCHAR(40) NOT NULL UNIQUE,
+	senha VARCHAR(20) NOT NULL,
+	CONSTRAINT PK_Usuario PRIMARY KEY (idusuario)
+);
+
+
+CREATE TABLE caixa (
+	idcaixa BIGINT NOT NULL DEFAULT NEXTVAL('seq-caixa'),
+	cor VARCHAR(100) NOT NULL UNIQUE,
+	CONSTRAINT PK_Caixa PRIMARY KEY (idcaixa)
+);
+
+
+CREATE TABLE revista (
+	idrevista BIGINT NOT NULL DEFAULT NEXTVAL('seq-revista'),
+	colecao VARCHAR(100) NOT NULL,
+	"num-edicao" BIGINT NOT NULL,
+	"ano-revista" VARCHAR(4),
+	disponibilidade BOOLEAN NOT NULL,
+	idcaixa BIGINT NOT NULL, 
+	CONSTRAINT PK_Revista PRIMARY KEY (idrevista),
+	CONSTRAINT FK_Caixa FOREIGN KEY (idcaixa) references caixa ON DELETE CASCADE ON UPDATE CASCADE,
+	UNIQUE(colecao, "num-edicao")
+);
+
+
+CREATE TABLE amigo (
+	idamigo BIGINT NOT NULL DEFAULT NEXTVAL('seq-amigo'),
+	nome VARCHAR(100) NOT NULL,
+	telefone VARCHAR(20),
+	CONSTRAINT PK_Amigo PRIMARY KEY (idamigo)
+);
+
+
+CREATE TABLE emprestimo (
+	idemprestimo BIGINT NOT NULL DEFAULT NEXTVAL('seq-emprestimo'),
+	idamigo BIGINT NOT NULL,
+	idrevista BIGINT NOT NULL,
+	dataemprestimo DATE NOT NULL,
+	datadevolucao DATE,
+	CONSTRAINT PK_Emprestimo PRIMARY KEY (idemprestimo, idamigo, idrevista),
+	CONSTRAINT FK_Amigo FOREIGN KEY (idamigo) references amigo ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FK_Revista FOREIGN KEY (idrevista) references revista ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO usuario (usuario, senha) VALUES ('admin', 'admin');
+

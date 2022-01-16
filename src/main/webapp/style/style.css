@@ -1,0 +1,187 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+body {
+	background-color: #fff6d7;
+}
+
+.cabecalho {
+	width: 100vw;
+	top: 0;
+}
+
+.imagem-login {
+	width: 2.5vw;
+}
+
+.login-informacoes {
+	font-weight: bold;
+	float: right;
+	display: inline;
+	margin: 0 1vw 0.5vw 0;
+}
+
+.cabecalho-link-menu {
+	width: 10vw;
+	height: 3vh;
+	background-color: #ffdc8f;
+	font-weight: bold;
+	margin-left: 1vw;
+	float: left;
+	border: 1px solid #1754af;
+	color:  #1754af;
+}
+
+.cabecalho-link-menu:hover {
+	background-color: #1754af;
+	color: #fff;
+}
+
+.titulo-pag {
+	margin: 2.5vh auto 0 auto;
+	text-align: center;
+	font-size: 2.5em;
+	color: #1754af;
+}
+
+.retira-float {
+	clear: both;
+}
+
+.formulario, .erro {
+	width: 30vw;
+	height: 35vh;
+	background-color: #ffdc8f;
+	font-size: 1.3em;
+	margin: 5vh auto 0 auto;
+	padding-top: 1.5%;
+	border-radius: 30px;
+	color: #1754af;
+}
+
+.formulario div {
+	width: 65%;	
+	display: block;
+	margin: 5% auto 0 auto;
+}
+
+.formulario div p{
+	width: 30%;
+	display: inline-block;
+}
+
+.formulario h6 {
+	font-size: 0.55em;
+	text-align: center;
+}
+
+.formulario-revista div, .formulario-emprestimo div {	
+	margin: 1.5vh auto 0 auto;
+	width: 85%;
+}
+
+.formulario-revista {
+	height: 50vh;
+	margin: 2.5vh auto 0 auto;
+}
+
+.formulario-emprestimo {
+	width: 60vw;
+	height: 55vh;
+	margin: 2.5vh auto 0 auto;
+}
+
+.formulario-pequeno {
+	height: 25vh;
+}
+
+.erro h1 {
+	color: #1754af;
+}
+
+.input-txt {
+	width: 65%;
+	height: 25px;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.revista-nome {
+	width: 100%;
+}
+
+.botao {
+	background-color: #1754af;
+	color: #FFF;
+	width: 25%;
+	height: 25px;
+	display: block;
+	margin: 5% auto 0 auto;
+	border-radius: 10px;
+	border: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.botao:hover {
+	background-color: #FFF;
+	color: #1754af;
+	border: 1px solid #1754af;
+}
+
+.links-menu {
+	width: 18vw;
+	margin-left: 1.5vw;
+	margin-top: 20vh;
+	display: inline-block;
+	background-color: #ffdc8f;
+	border-radius: 30px;
+}
+
+.links-menu a {
+	display: block;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	text-decoration: none;
+	font-weight: bold;
+	color: #1754af;
+	border: 1px solid #ffdc8f;
+}
+
+.links-menu a:hover {
+	border: 1px solid #1754af;
+	text-decoration: underline;
+}
+
+.tabela, .tabela th, .tabela td {
+	border: 2px solid #1754af;
+}
+
+.tabela {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.tabela td{ 
+	padding: 0.5vh 2vw;
+}
+
+.mensagem {
+	text-align: center;
+	color: #1754af;
+}
+
+.rodape {
+	width: 100vw;
+	position:absolute;
+   	bottom:0;
+}
